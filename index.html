@@ -17,7 +17,46 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <!-- navigation -->
+      <div class="container site-header__inner">
+        <a
+          class="site-header__brand"
+          href="index.html"
+          aria-label="Adventure Co. home"
+        >
+          <img
+            src="./media/logo-ac.svg"
+            alt="Adventure Co. logo"
+            class="site-header__logo"
+          />
+        </a>
+
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="site-nav__toggle"
+          aria-label="Toggle navigation"
+        />
+        <label for="nav-toggle" class="site-nav__burger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#">About</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="./blog-posts.html">Blog</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#">Download</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="main">
