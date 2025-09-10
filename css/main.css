@@ -146,6 +146,23 @@ select {
 }
 /* End of CSS Reset */
 
+/* Global styles */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(0, 0, 0, 0.28),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #0f1221, #0a0d1b 60%, #0f1221);
+  color: var(--text);
+}
+
 #main {
   scroll-margin-top: 80px;
 }
