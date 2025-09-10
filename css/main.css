@@ -156,7 +156,43 @@ select {
   margin-inline: auto;
 }
 
-/* Skip link (a11y) */
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  transition: transform 0.08s ease, background-color 0.18s ease,
+    color 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background: linear-gradient(180deg, var(--color-secondary), #ffd84a);
+  color: #1f1636;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(255, 216, 74, 0.25);
+}
+
+@media (hover: hover) {
+  .btn--primary:hover {
+    filter: saturate(1.05) brightness(1.02);
+  }
+}
+
+/* Skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -452,4 +488,53 @@ select {
   .site-footer__legal {
     justify-content: space-between;
   }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  isolation: isolate; /* ensures overlay stays behind content */
+  min-height: clamp(48vh, 62vh, 78vh);
+  display: grid; /* centers the container vertically when short on content */
+  background: #0b0a12;
+  /* Background image (decorative) */
+  background-image: url("../media/hero-banner.jpg");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+    radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(0, 0, 0, 0.35),
+      transparent 70%
+    );
+}
+
+/* Inner content */
+.hero__inner {
+  align-self: center;
+  padding: 4rem 0;
+  max-width: 70ch;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 1.2rem + 3vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2px;
+}
+
+.hero__text {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  max-width: 55ch;
 }
