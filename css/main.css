@@ -1301,6 +1301,20 @@ body {
   line-height: 1.65;
 }
 
+/* Author card bio links */
+.author-card__bio a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+.author-card__bio a:hover,
+.author-card__bio a:focus-visible {
+  filter: saturate(1.05) brightness(1.02);
+  outline: none;
+}
+
 /* Small screens: stack */
 @media (max-width: 520px) {
   .author-card {
