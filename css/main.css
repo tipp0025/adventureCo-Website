@@ -967,8 +967,12 @@ body {
 
 /* --- Blog Content Styles --- */
 
-.post {
+.post__body {
   padding: 2.5rem 0;
+}
+
+.post__footer {
+  padding: 1.5rem 0 3rem;
 }
 
 .prose {
@@ -1006,10 +1010,34 @@ body {
   line-height: 1.25;
 }
 .prose h2 {
-  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.8rem);
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+
+.prose h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.05rem;
+  height: 4px;
+  width: clamp(56px, 10vw, 140px);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-secondary), #ffd84a);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 .prose h3 {
-  font-size: clamp(1.2rem, 1rem + 0.6vw, 1.4rem);
+  position: relative;
+  padding-left: 0.6rem;
+}
+.prose h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 3px;
+  border-radius: 2px;
+  background: color-mix(in oklab, var(--color-secondary) 70%, transparent);
 }
 
 /* Inner-prose links */
