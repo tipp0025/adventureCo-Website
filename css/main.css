@@ -849,3 +849,118 @@ body {
   box-shadow: 0 0 0 2px var(--color-secondary), 0 6px 18px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
+
+/* Blog-posts Page */
+
+.page-title {
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.page-intro {
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0 0 2rem;
+}
+
+/* --- Blog post hero --- */
+.post-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(46vh, 58vh, 70vh);
+  display: grid;
+  color: var(--text);
+
+  background-image: url("../media/blog-image-adventurers.jpg");
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+}
+
+/* hero overlay */
+.post-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+    radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(0, 0, 0, 0.35),
+      transparent 70%
+    );
+}
+
+.post-hero__inner {
+  align-self: center;
+  padding: 3.25rem 0;
+  max-width: 72ch;
+}
+
+.post-hero__title {
+  font-size: clamp(1.8rem, 1.2rem + 2.5vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.2px;
+}
+
+.post-hero__meta {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.post-hero__source {
+  color: var(--color-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted
+    color-mix(in oklab, var(--color-secondary) 60%, transparent);
+}
+.post-hero__source:hover,
+.post-hero__source:focus-visible {
+  border-bottom-style: solid;
+  outline: none;
+}
+
+/*  Tags  */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--text);
+  text-decoration: none;
+
+  /* Tag chips */
+  background-color: color-mix(in oklab, var(--surface) 96%, black);
+  border: 1px solid
+    color-mix(in oklab, var(--color-secondary) 40%, var(--border));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.12s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+@media (hover: hover) {
+  .tag:hover {
+    transform: translateY(-1px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+  }
+}
+
+.tag:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
