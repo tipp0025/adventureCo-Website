@@ -965,7 +965,7 @@ body {
   outline-offset: 2px;
 }
 
-/* --- Blog Content Styles --- */
+/* --- Blog Content Styles */
 
 .post__body {
   padding: 2.5rem 0;
@@ -1144,4 +1144,68 @@ body {
     font-size: 1rem;
     line-height: 1.65;
   }
+}
+/* Image breaker */
+.image-breaker {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(220px, 28vw, 360px);
+  color: var(--text);
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.image-breaker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+    radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(0, 0, 0, 0.3),
+      transparent 70%
+    );
+}
+
+.image-breaker__inner {
+  align-self: center;
+  padding: 2.5rem 0;
+}
+.image-breaker__title {
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.8rem);
+  line-height: 1.2;
+  margin: 0;
+
+  /* 'glass' background */
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, #000 25%, transparent);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* underline effect */
+.image-breaker__title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: clamp(56px, 10vw, 140px);
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-secondary), #ffd84a);
+}
+
+/* Make sure adjacent prose has nice spacing around the breaker */
+.prose + .image-breaker {
+  margin-top: 1.75rem;
+}
+.image-breaker + .prose {
+  margin-top: 1.75rem;
 }
