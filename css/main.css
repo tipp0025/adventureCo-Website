@@ -604,16 +604,13 @@ body {
 
 /* Icon */
 .card__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: clamp(180px, 26vw, 260px);
-  width: 100%;
+  height: clamp(200px, 28vw, 300px);
 }
 
 .card__icon {
-  width: clamp(120px, 16vw, 200px);
-  height: auto;
+  height: min(85%, 260px);
+  width: auto;
+  max-width: 90%;
   opacity: 0.98;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
 }
