@@ -1335,3 +1335,93 @@ body {
     height: 64px;
   }
 }
+
+/* Signup styles */
+
+.page--signup main {
+  padding: 3rem 0;
+}
+
+.form-card {
+  margin: 1rem auto 3rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  max-width: 640px;
+
+  border-radius: var(--radius);
+  border: 1px solid
+    color-mix(in oklab, var(--color-secondary) 35%, var(--border));
+  background-color: color-mix(in oklab, var(--surface) 96%, black);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+.form-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  background: linear-gradient(90deg, var(--color-secondary), #ffd84a 70%);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+.label {
+  font-weight: 600;
+}
+.muted {
+  color: var(--muted);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: color-mix(in oklab, var(--surface) 98%, black);
+  color: var(--text);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: color-mix(in oklab, var(--muted) 85%, transparent);
+}
+
+.input:focus-visible,
+.select:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 2px var(--color-secondary);
+}
+
+.help {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.error {
+  color: #ff8a8a;
+  font-size: 0.95rem;
+}
+
+/* 2-col layout helper */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 720px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
