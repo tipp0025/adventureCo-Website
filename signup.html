@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventure Co - Home</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page page--signup">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a
+          class="site-header__brand"
+          href="index.html"
+          aria-label="Adventure Co. home"
+        >
+          <img
+            src="./media/logo-ac.svg"
+            alt="Adventure Co. logo"
+            class="site-header__logo"
+          />
+        </a>
+
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="site-nav__toggle"
+          aria-label="Toggle navigation"
+        />
+        <label for="nav-toggle" class="site-nav__burger" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="./index.html">About</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="./blog-posts.html">Blog</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#">Download</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container">
+        <h1 class="page-title">Sign Up</h1>
+        <p class="page-intro">
+          Create your Adventure Co. account to get started!
+        </p>
+      </section>
+
+      <section class="form-card container" aria-labelledby="signup-title">
+        <form class="form" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="first" class="label">First name</label>
+              <input
+                id="first"
+                name="first_name"
+                type="text"
+                class="input"
+                autocomplete="given-name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="last" class="label">Last name</label>
+              <input
+                id="last"
+                name="last_name"
+                type="text"
+                class="input"
+                autocomplete="family-name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email" class="label">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="input"
+              inputmode="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-help"
+            />
+            <p id="email-help" class="help">
+              We'll send a verification link to this address.
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="password" class="label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="input"
+              autocomplete="new-password"
+              minlength="8"
+              required
+              aria-describedby="pw-help"
+            />
+            <p id="pw-help" class="help">Use at least 8 characters.</p>
+          </div>
+
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="tos" required />
+              <span
+                >I agree to the <a href="#">Terms</a> and
+                <a href="#">Privacy Policy</a>.</span
+              >
+            </label>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Create account</button>
+
+          <p class="muted" style="margin-top: 0.5rem">
+            Already have an account?
+            <a href="#">Sign in</a>
+          </p>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <a
+          class="site-footer__brand"
+          href="index.html"
+          aria-label="Adventure Co. home"
+        >
+          <img
+            src="./media/logo-ac.svg"
+            alt="Adventure Co. logo"
+            class="site-footer__logo"
+          />
+        </a>
+
+        <nav class="site-footer__nav" aria-label="Footer">
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="./index.html">About</a></li>
+            <li>
+              <a class="site-footer__link" href="./blog-posts.html">Blog</a>
+            </li>
+            <li><a class="site-footer__link" href="#">Download</a></li>
+            <li>
+              <a class="site-footer__link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__legal">
+          <small class="site-footer__copy">© 2024 Adventure Co-Operative</small>
+          <ul class="site-footer__policies" role="list">
+            <li><a class="site-footer__link" href="#">Privacy Policy</a></li>
+            <li><a class="site-footer__link" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
